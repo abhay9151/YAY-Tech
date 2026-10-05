@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    @apply bg-lime text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid #7b52e0;
+    outline-offset: 4px;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #fafaf8; }
+  ::-webkit-scrollbar-thumb { background: #c9c5cf; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #7b52e0; }
+}
+
+@layer components {
+  .section-label {
+    @apply flex items-center gap-2 font-display text-[11px] font-semibold uppercase tracking-[0.18em];
+  }
+
+  .section-label::before {
+    content: '';
+    @apply h-2 w-2 rounded-full bg-violet;
+  }
+
+  .section-rule {
+    @apply mt-4 h-px w-full bg-ink/15;
+  }
+
+  .pill-link {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-ink/20 px-5 py-2.5 text-sm font-medium transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+
+  .marquee-track {
+    animation-play-state: running;
+  }
+
+  .marquee-group:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .underline-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    transition: background-size 500ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .group:hover .underline-draw,
+  .group:focus-visible .underline-draw {
+    background-size: 100% 1px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
