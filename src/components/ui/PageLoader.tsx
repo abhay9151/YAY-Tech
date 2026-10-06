@@ -15,7 +15,7 @@ export const PageLoader: React.FC = () => {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-night text-white"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-inverse-background text-inverse-foreground"
           initial={{ y: 0 }}
           animate={{ y: 0 }}
           exit={{ y: '-100%' }}
@@ -29,7 +29,7 @@ export const PageLoader: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
           >
-            {siteContent.company.name}<span className="text-lime">.</span>
+            {siteContent.company.name}<span className="text-inverse-foreground">.</span>
           </motion.span>
         </motion.div>
       )}

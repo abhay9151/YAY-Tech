@@ -45,14 +45,14 @@ export const ReelSection: React.FC = () => {
                 A closer look at YAY Tech
               </h2>
             </div>
-            <span className="hidden items-center gap-2 text-xs uppercase tracking-widest text-muted sm:flex">
+            <span className="hidden items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground sm:flex">
               Reel <ArrowUpRight className="h-4 w-4" />
             </span>
           </div>
           <div
             ref={cardRef}
             onMouseMove={handlePointer}
-            className="group relative min-h-[280px] overflow-hidden rounded-[2rem] bg-violet sm:min-h-[430px] lg:min-h-[560px]"
+            className="group relative min-h-[280px] overflow-hidden rounded-[2rem] bg-gray-900 sm:min-h-[430px] lg:min-h-[560px]"
           >
             <img
               src="/assets/home-Cbd3xqKn.jpeg"
@@ -60,26 +60,25 @@ export const ReelSection: React.FC = () => {
               loading="lazy"
               width="1280"
               height="720"
-              className="absolute inset-0 h-full w-full object-cover mix-blend-luminosity opacity-60 transition-transform duration-1000 group-hover:scale-105"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-violet/55 via-ink/15 to-ink/70" />
-            <div className="absolute left-6 top-6 text-white sm:left-10 sm:top-10">
-              <p className="section-label before:bg-lime">Showreel</p>
-              <p className="mt-2 font-display text-sm text-white/75 sm:text-base">
+            <div className="absolute left-6 top-6 rounded-2xl bg-inverse-background/80 p-4 text-inverse-foreground sm:left-10 sm:top-10">
+              <p className="section-label before:bg-inverse-foreground text-inverse-foreground">Showreel</p>
+              <p className="mt-2 font-display text-sm text-inverse-foreground/75 sm:text-base">
                 {`[ADD YAY Tech showreel video]`}
               </p>
             </div>
             <button
               type="button"
               onClick={() => setIsOpen(true)}
-              className="absolute inset-0 flex items-center justify-center focus-visible:outline-white"
+              className="absolute inset-0 flex items-center justify-center focus-visible:outline-inverse-foreground"
               aria-label="Open the YAY Tech showreel placeholder"
             >
               <motion.span
                 animate={{ x: (cursor.x - 50) * 1.1, y: (cursor.y - 50) * 1.1 }}
                 whileHover={{ scale: 1.12 }}
                 transition={{ type: 'spring', stiffness: 120, damping: 18 }}
-                className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-1 rounded-full border border-white/70 bg-white/20 text-[10px] font-semibold uppercase tracking-[0.14em] text-white shadow-lg backdrop-blur-md sm:h-32 sm:w-32"
+                className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-1 rounded-full border border-inverse-foreground/70 bg-inverse-foreground/20 text-[10px] font-semibold uppercase tracking-[0.14em] text-inverse-foreground shadow-lg backdrop-blur-md sm:h-32 sm:w-32"
               >
                 <Play className="h-4 w-4 fill-current" /> Play reel
               </motion.span>
@@ -89,18 +88,18 @@ export const ReelSection: React.FC = () => {
       </section>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="YAY Tech showreel">
         <div className="space-y-4">
-          <div className="relative overflow-hidden rounded-3xl bg-night">
+          <div className="relative overflow-hidden rounded-3xl bg-inverse-background">
             <img
               src="/assets/home-Cbd3xqKn.jpeg"
               alt="YAY Tech team — temporary showreel poster"
               loading="lazy"
-              className="max-h-[60vh] w-full object-cover opacity-70"
+              className="max-h-[60vh] w-full object-cover"
             />
-            <p className="absolute inset-0 flex items-center justify-center p-6 text-center font-display text-2xl text-white sm:text-4xl">
+            <p className="absolute inset-0 flex items-center justify-center p-6 text-center font-display text-2xl text-inverse-foreground sm:text-4xl">
               [ADD SHOWREEL VIDEO]
             </p>
           </div>
-          <p className="text-sm text-muted">Replace this image and placeholder with the approved YAY Tech showreel.</p>
+          <p className="text-sm text-muted-foreground">Replace this image and placeholder with the approved YAY Tech showreel.</p>
         </div>
       </Modal>
     </>

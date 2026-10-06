@@ -9,15 +9,15 @@ export const TrustSection: React.FC = () => {
   const renderNames = (reverse = false) => {
     const items = reverse ? [...projects].reverse() : projects;
     return items.map((project) => (
-      <span key={project.id} className="flex shrink-0 items-center gap-7 px-5 font-display text-xl font-medium tracking-tight text-ink/75 sm:text-2xl">
+      <span key={project.id} className="flex shrink-0 items-center gap-7 px-5 font-display text-xl font-medium tracking-tight text-foreground/75 sm:text-2xl">
         {project.client}
-        <ArrowUpRight aria-hidden="true" className="h-4 w-4 text-violet" />
+        <ArrowUpRight aria-hidden="true" className="h-4 w-4 text-foreground" />
       </span>
     ));
   };
 
   return (
-    <section aria-label="Project collaborations" className="overflow-hidden border-b border-line py-10 sm:py-14">
+    <section aria-label="Project collaborations" className="overflow-hidden border-b border-border py-10 sm:py-14">
       <Container size="wide" className="mb-5">
         <p className="section-label">Selected project collaborations</p>
       </Container>

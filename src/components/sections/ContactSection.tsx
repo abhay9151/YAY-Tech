@@ -92,18 +92,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
   };
 
   return (
-    <section id="contact" data-nav-section className="relative overflow-hidden border-t border-line py-20 sm:py-28 lg:py-36">
+    <section id="contact" data-nav-section className="relative overflow-hidden border-t border-border py-20 sm:py-28 lg:py-36">
       {/* Background glow */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-accent/10 blur-[170px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-gray-700/10 blur-[170px] pointer-events-none rounded-full" />
 
       <Container size="wide">
         <SectionHeading
           badge="Get In Touch"
-          badgeVariant="accent"
+          badgeVariant="default"
           title={
             <span>
               Let's Discuss Your Project &{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-light to-emerald-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600">
                 Lock In Your Delivery Date
               </span>
             </span>
@@ -120,24 +120,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 space-y-8"
           >
-            <div className="space-y-6 rounded-3xl border border-ink/10 bg-white p-6 shadow-card sm:p-8">
-              <h3 className="font-display text-2xl font-medium text-ink">
+            <div className="space-y-6 rounded-3xl border border-foreground/10 bg-surface p-6 shadow-card sm:p-8">
+              <h3 className="font-display text-2xl font-medium text-foreground">
                 Contact Information
               </h3>
 
               <div className="space-y-5">
                 {/* Phone */}
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-ink/10 bg-paper text-violet">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-foreground/10 bg-background text-foreground">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase font-medium text-gray-400">
+                    <div className="text-xs uppercase font-medium text-gray-600">
                       Direct Phone
                     </div>
                     <a
                       href={`tel:${siteContent.company.contact.phone.replace(/\s+/g, '')}`}
-                      className="font-mono text-base font-semibold text-ink hover:text-violet transition-colors"
+                      className="font-mono text-base font-semibold text-foreground hover:text-foreground transition-colors"
                     >
                       {siteContent.company.contact.phone}
                     </a>
@@ -146,16 +146,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
 
                 {/* Email */}
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-ink/10 bg-paper text-emerald-700">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-foreground/10 bg-background text-gray-700">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase font-medium text-gray-400">
+                    <div className="text-xs uppercase font-medium text-gray-600">
                       Inquiries Email
                     </div>
                     <a
                       href={`mailto:${siteContent.company.contact.email}`}
-                      className="font-mono text-base font-semibold text-ink hover:text-emerald-700 transition-colors"
+                      className="font-mono text-base font-semibold text-foreground hover:text-gray-700 transition-colors"
                     >
                       {siteContent.company.contact.email}
                     </a>
@@ -164,14 +164,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
 
                 {/* Office Location */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-ink/10 bg-paper text-violet">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-foreground/10 bg-background text-foreground">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase font-medium text-gray-400">
+                    <div className="text-xs uppercase font-medium text-gray-600">
                       Engineering Hub
                     </div>
-                    <div className="text-sm text-gray-300 leading-snug">
+                    <div className="text-sm text-gray-600 leading-snug">
                       Indirapuram, Ghaziabad<br />
                       Uttar Pradesh, India
                     </div>
@@ -180,23 +180,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
               </div>
 
               {/* Business Hours */}
-              <div className="space-y-3 border-t border-ink/10 pt-6">
-                <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-                  <Clock className="w-4 h-4 text-amber-400" />
+              <div className="space-y-3 border-t border-foreground/10 pt-6">
+                <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                  <Clock className="w-4 h-4 text-gray-600" />
                   <span>Business Working Hours</span>
                 </div>
-                <div className="space-y-1.5 text-xs text-gray-400 font-normal">
+                <div className="space-y-1.5 text-xs text-gray-600 font-normal">
                   <div className="flex justify-between">
                     <span>Monday - Friday:</span>
-                    <span className="text-gray-300 font-medium">9:00 AM - 6:00 PM</span>
+                    <span className="text-gray-600 font-medium">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Saturday:</span>
-                    <span className="text-gray-300 font-medium">10:00 AM - 4:00 PM</span>
+                    <span className="text-gray-600 font-medium">10:00 AM - 4:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday:</span>
-                    <span className="text-red-400/90 font-medium">Closed</span>
+                    <span className="text-gray-600/90 font-medium">Closed</span>
                   </div>
                 </div>
               </div>
@@ -211,7 +211,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
             transition={{ duration: 0.6 }}
             className="lg:col-span-7"
           >
-            <div className="relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-6 shadow-card sm:p-10">
+            <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-surface p-6 shadow-card sm:p-10">
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
                   <motion.form
@@ -224,10 +224,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                     className="space-y-6"
                   >
                     <div>
-                      <h3 className="mb-2 font-display text-2xl font-medium text-ink">
+                      <h3 className="mb-2 font-display text-2xl font-medium text-foreground">
                         Send Us A Message
                       </h3>
-                      <p className="text-xs sm:text-sm text-gray-400 font-normal">
+                      <p className="text-xs sm:text-sm text-gray-600 font-normal">
                         Fill in your project details and our team will get back to you within 2 business hours.
                       </p>
                     </div>
@@ -237,9 +237,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                       <div>
                         <label
                           htmlFor="firstName"
-                          className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+                          className="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1.5"
                         >
-                          First Name <span className="text-red-400">*</span>
+                          First Name <span className="text-gray-600">*</span>
                         </label>
                         <input
                           id="firstName"
@@ -250,14 +250,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                             if (errors.firstName) setErrors({ ...errors, firstName: '' });
                           }}
                           placeholder="John"
-                          className={`min-h-12 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink placeholder-gray-500 focus:outline-none focus:border-violet transition-colors ${
+                          className={`min-h-12 w-full rounded-xl border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground placeholder-gray-500 focus:outline-none focus:border-foreground transition-colors ${
                             errors.firstName
-                              ? 'border-red-500/80 focus:border-red-500'
-                              : 'border-ink/15 focus:border-violet'
+                              ? 'border-foreground border-2 focus:border-foreground'
+                              : 'border-foreground/15 focus:border-foreground'
                           }`}
                         />
                         {errors.firstName && (
-                          <div className="flex items-center gap-1 text-xs text-red-400 mt-1">
+                          <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
                             <AlertCircle className="w-3.5 h-3.5" />
                             <span>{errors.firstName}</span>
                           </div>
@@ -267,9 +267,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                       <div>
                         <label
                           htmlFor="lastName"
-                          className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+                          className="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1.5"
                         >
-                          Last Name <span className="text-red-400">*</span>
+                          Last Name <span className="text-gray-600">*</span>
                         </label>
                         <input
                           id="lastName"
@@ -280,14 +280,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                             if (errors.lastName) setErrors({ ...errors, lastName: '' });
                           }}
                           placeholder="Doe"
-                          className={`min-h-12 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink placeholder-gray-500 focus:outline-none focus:border-violet transition-colors ${
+                          className={`min-h-12 w-full rounded-xl border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground placeholder-gray-500 focus:outline-none focus:border-foreground transition-colors ${
                             errors.lastName
-                              ? 'border-red-500/80 focus:border-red-500'
-                              : 'border-ink/15 focus:border-violet'
+                              ? 'border-foreground border-2 focus:border-foreground'
+                              : 'border-foreground/15 focus:border-foreground'
                           }`}
                         />
                         {errors.lastName && (
-                          <div className="flex items-center gap-1 text-xs text-red-400 mt-1">
+                          <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
                             <AlertCircle className="w-3.5 h-3.5" />
                             <span>{errors.lastName}</span>
                           </div>
@@ -299,9 +299,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+                        className="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1.5"
                       >
-                        Business Email <span className="text-red-400">*</span>
+                        Business Email <span className="text-gray-600">*</span>
                       </label>
                       <input
                         id="email"
@@ -312,14 +312,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                           if (errors.email) setErrors({ ...errors, email: '' });
                         }}
                         placeholder="john@example.com"
-                        className={`min-h-12 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink placeholder-gray-500 focus:outline-none focus:border-violet transition-colors ${
+                        className={`min-h-12 w-full rounded-xl border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground placeholder-gray-500 focus:outline-none focus:border-foreground transition-colors ${
                           errors.email
-                            ? 'border-red-500/80 focus:border-red-500'
-                            : 'border-ink/15 focus:border-violet'
+                            ? 'border-foreground border-2 focus:border-foreground'
+                            : 'border-foreground/15 focus:border-foreground'
                         }`}
                       />
                       {errors.email && (
-                        <div className="flex items-center gap-1 text-xs text-red-400 mt-1">
+                        <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
                           <AlertCircle className="w-3.5 h-3.5" />
                           <span>{errors.email}</span>
                         </div>
@@ -330,9 +330,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                     <div>
                       <label
                         htmlFor="projectType"
-                        className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+                        className="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1.5"
                       >
-                        Project Type / Service <span className="text-red-400">*</span>
+                        Project Type / Service <span className="text-gray-600">*</span>
                       </label>
                       <select
                         id="projectType"
@@ -341,23 +341,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                           setFormData({ ...formData, projectType: e.target.value });
                           if (errors.projectType) setErrors({ ...errors, projectType: '' });
                         }}
-                        className={`min-h-12 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink focus:outline-none focus:border-violet transition-colors ${
+                        className={`min-h-12 w-full rounded-xl border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:border-foreground transition-colors ${
                           errors.projectType
-                            ? 'border-red-500/80 focus:border-red-500'
-                            : 'border-ink/15 focus:border-violet'
+                            ? 'border-foreground border-2 focus:border-foreground'
+                            : 'border-foreground/15 focus:border-foreground'
                         }`}
                       >
                         <option value="" disabled>
                           Select a service
                         </option>
                         {serviceOptions.map((opt) => (
-                          <option key={opt} value={opt} className="bg-white text-ink">
+                          <option key={opt} value={opt} className="bg-surface text-foreground">
                             {opt}
                           </option>
                         ))}
                       </select>
                       {errors.projectType && (
-                        <div className="flex items-center gap-1 text-xs text-red-400 mt-1">
+                        <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
                           <AlertCircle className="w-3.5 h-3.5" />
                           <span>{errors.projectType}</span>
                         </div>
@@ -368,9 +368,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5"
+                        className="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1.5"
                       >
-                        Project Details & Timeline Requirements <span className="text-red-400">*</span>
+                        Project Details & Timeline Requirements <span className="text-gray-600">*</span>
                       </label>
                       <textarea
                         id="message"
@@ -381,14 +381,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                           if (errors.message) setErrors({ ...errors, message: '' });
                         }}
                         placeholder="Tell us about your project requirements, target milestones, and timeline..."
-                        className={`w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink placeholder-gray-500 focus:outline-none focus:border-violet transition-colors ${
+                        className={`w-full rounded-xl border border-foreground/15 bg-background px-4 py-3 text-sm text-foreground placeholder-gray-500 focus:outline-none focus:border-foreground transition-colors ${
                           errors.message
-                            ? 'border-red-500/80 focus:border-red-500'
-                            : 'border-ink/15 focus:border-violet'
+                            ? 'border-foreground border-2 focus:border-foreground'
+                            : 'border-foreground/15 focus:border-foreground'
                         }`}
                       />
                       {errors.message && (
-                        <div className="flex items-center gap-1 text-xs text-red-400 mt-1">
+                        <div className="flex items-center gap-1 text-xs text-gray-600 mt-1">
                           <AlertCircle className="w-3.5 h-3.5" />
                           <span>{errors.message}</span>
                         </div>
@@ -404,7 +404,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                       className="w-full justify-center"
                       icon={
                         isSubmitting ? (
-                          <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                          <span className="h-4 w-4 animate-spin rounded-full border-2 border-inverse-foreground border-t-transparent" />
                         ) : (
                           <Send className="w-4 h-4" />
                         )
@@ -422,23 +422,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                     exit={{ opacity: 0 }}
                     className="py-12 px-4 text-center space-y-6"
                   >
-                    <div className="w-20 h-20 rounded-3xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400 shadow-glow-sm">
+                    <div className="w-20 h-20 rounded-3xl bg-muted border-2 border-foreground flex items-center justify-center mx-auto text-foreground">
                       <CheckCircle2 className="w-10 h-10" />
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-display text-2xl font-medium text-ink sm:text-3xl">
+                      <h3 className="font-display text-2xl font-medium text-foreground sm:text-3xl">
                         Inquiry Received!
                       </h3>
-                      <p className="text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
-                        Thank you, <span className="font-semibold text-ink">{formData.firstName}</span>. Your project proposal for{' '}
-                        <span className="text-accent-light font-medium">{formData.projectType}</span> has been logged. Our lead architect will review your requirements and reach out within 2 hours.
+                      <p className="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
+                        Thank you, <span className="font-semibold text-foreground">{formData.firstName}</span>. Your project proposal for{' '}
+                        <span className="font-semibold text-foreground underline">{formData.projectType}</span> has been logged. Our lead architect will review your requirements and reach out within 2 hours.
                       </p>
                     </div>
 
-                    <div className="mx-auto max-w-sm space-y-1 rounded-2xl border border-ink/10 bg-paper p-4 text-xs text-muted">
-                      <div>Confirmation sent to: <span className="font-mono text-ink">{formData.email}</span></div>
-                      <div>Expected timeline: <span className="text-emerald-400 font-semibold">Immediate Review</span></div>
+                    <div className="mx-auto max-w-sm space-y-1 rounded-2xl border border-foreground/10 bg-background p-4 text-xs text-muted-foreground">
+                      <div>Confirmation sent to: <span className="font-mono text-foreground">{formData.email}</span></div>
+                      <div>Expected timeline: <span className="text-gray-600 font-semibold">Immediate Review</span></div>
                     </div>
 
                     <Button

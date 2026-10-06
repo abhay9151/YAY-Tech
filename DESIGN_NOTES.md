@@ -1,6 +1,6 @@
 # Design Notes: YayTech x The Alien Design Synthesis
 
-> The original notes below record the earlier design exploration. The current visual system is the light paper/ink redesign described in `UPGRADE_NOTES.md`; its tokens are maintained in `tailwind.config.js`.
+> These notes preserve the original design and content research. The current visual system uses the strict monochrome tokens in `tailwind.config.js`.
 
 ## 1. Content Audit: YayTech (Source: yaytech.in)
 An exhaustive inspection of the production application bundle of `https://www.yaytech.in/` revealed the authentic identity and content structure of YayTech:
@@ -58,9 +58,9 @@ An exhaustive inspection of the production application bundle of `https://www.ya
 Studying `thealien.design` provided key architectural and aesthetic benchmarks:
 
 1. **Aesthetic Tone & Rhythm**:
-   - High-contrast, dark-first premium agency aesthetic (#090A0F background, neutral-900 surface cards, crisp white typography).
+   - High-contrast premium agency aesthetic with black and white surfaces, neutral-gray cards, and crisp typography.
    - Generous vertical whitespace (`py-24` to `py-32`) giving every statement breathing room.
-   - Fine 1px subtle borders (`border-white/10`) with radial gradient glow on hover.
+   - Fine 1px neutral borders with restrained shadows on hover.
 2. **Typography System**:
    - Expressive display font: **Space Grotesk** (geometric, bold uppercase tracking, tech authority).
    - Body font: **Instrument Sans** (ultra-clean, high legibility, human grotesque proportions).
@@ -73,7 +73,7 @@ Studying `thealien.design` provided key architectural and aesthetic benchmarks:
    - Smooth page transitions and scroll reveals using Framer Motion with `viewport: { once: true, margin: "-100px" }`.
    - Full support for `prefers-reduced-motion` to guarantee accessibility.
 4. **Navigation & Wayfinding**:
-   - Floating pill navbar with glassmorphism (`backdrop-blur-xl bg-neutral-950/75 border border-white/10`).
+   - Floating pill navbar with a neutral translucent surface and thin border.
    - Desktop anchor navigation + "Book A Call" / "Start Your Project" high-contrast CTA.
    - Clean mobile drawer menu with staggered link animations.
 5. **Interactive Feedback**:
@@ -86,7 +86,7 @@ Studying `thealien.design` provided key architectural and aesthetic benchmarks:
 
 ## 3. Architecture & Implementation Plan
 - **Framework**: React 18 + TypeScript + Vite
-- **Styling**: Tailwind CSS with custom design tokens (dark obsidian palette, electric indigo `#6366F1` & emerald `#10B981` accents, Space Grotesk + Instrument Sans typography).
+- **Styling**: Tailwind CSS with black, white, neutral-gray design tokens, Space Grotesk, and Instrument Sans typography.
 - **Icons**: `lucide-react`
 - **Motion**: `framer-motion`
 - **Data Source**: Single source of truth in `src/data/siteContent.ts`, strictly typed and documented for easy updates.

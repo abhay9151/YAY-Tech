@@ -42,7 +42,7 @@ export const Modal: React.FC<ModalProps> = ({
             exit={{ opacity: 0 }}
             onClick={onClose}
             aria-hidden="true"
-            className="fixed inset-0 bg-ink/65 backdrop-blur-md"
+            className="fixed inset-0 bg-foreground/65 backdrop-blur-md"
           />
 
           <motion.div
@@ -54,11 +54,11 @@ export const Modal: React.FC<ModalProps> = ({
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.25 }}
             className={cn(
-              'relative z-10 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-ink/10 bg-white p-6 text-ink shadow-card no-scrollbar sm:p-8',
+              'relative z-10 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-foreground/10 bg-surface p-6 text-foreground shadow-card no-scrollbar sm:p-8',
               className
             )}
           >
-            <div className="mb-6 flex items-center justify-between border-b border-ink/10 pb-4">
+            <div className="mb-6 flex items-center justify-between border-b border-foreground/10 pb-4">
               {title && (
                 <h3 className="font-display text-xl font-semibold sm:text-2xl">
                   {title}
@@ -67,7 +67,7 @@ export const Modal: React.FC<ModalProps> = ({
               <button
                 onClick={onClose}
                 aria-label="Close dialog"
-                className="ml-auto flex h-11 w-11 items-center justify-center rounded-full text-muted transition-colors hover:bg-ink/5 hover:text-ink focus:outline-none focus:ring-2 focus:ring-violet"
+                className="ml-auto flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-foreground"
               >
                 <X className="w-5 h-5" />
               </button>

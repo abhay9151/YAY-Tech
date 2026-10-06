@@ -7,7 +7,7 @@ A modern, high-performance marketing website engineered with React 18, TypeScrip
 ## ⚡ Tech Stack
 
 - **Framework**: React 18 + Vite + TypeScript
-- **Styling**: Tailwind CSS with custom paper, ink, violet, lime, and mint design tokens
+- **Styling**: Tailwind CSS with a strict black, white, and neutral-gray palette plus semantic color tokens
 - **Animation & Motion**: Framer Motion for interface motion; GSAP + ScrollTrigger for scroll effects
 - **Smooth Scrolling**: Lenis (`lenis`) synchronized with the GSAP ticker and ScrollTrigger
 - **Icons**: `lucide-react`
@@ -83,7 +83,7 @@ After the first deployment, pushes to the connected production branch create pro
 │   │   └── ui/
 │   │       ├── Badge.tsx           # Pill badges with animated status indicators
 │   │       ├── Button.tsx          # Motion-enabled pill button with variants & icons
-│   │       ├── Card.tsx            # Obsidian frosted surface card with glow borders
+│   │       ├── Card.tsx            # Neutral surface card with restrained shadow
 │   │       ├── Container.tsx       # Standardized responsive container constraints
 │   │       ├── Marquee.tsx         # Infinite scrolling ribbon ticker with pause-on-hover
 │   │       ├── Modal.tsx           # Accessible overlay modal with ESC & backdrop dismiss
@@ -190,9 +190,8 @@ Add or edit client quotes in `siteContent.testimonials`:
 ## 🎨 Design System & Theme Customization
 
 Design tokens are configured in [`tailwind.config.js`](file:///Users/abhaypratapsingh/Desktop/Project%20Internship/tailwind.config.js):
-- **Background**: Obsidian `#090A0F`, `#0F111A`, `#12141F`
-- **Primary Accent**: Electric Indigo `#6366F1` / Hover `#4F46E5`
-- **Secondary Accents**: Emerald `#10B981` (Guaranteed/Success), Cyan `#06B6D4`, Amber `#F59E0B`
+- **Palette**: Black `#000000`, white `#FFFFFF`, and neutral grays `#FAFAFA` through `#111111`
+- **Semantic tokens**: `background`, `foreground`, `muted`, `muted-foreground`, `border`, `surface`, `inverse-background`, and `inverse-foreground`
 - **Display Typography**: `Space Grotesk` (Google Fonts)
 - **Body Typography**: `Instrument Sans` (Google Fonts)
 - **Fluid Type Scale**: `display-2xl` (`clamp(3rem, 7vw, 5.5rem)`), `display-xl` (`clamp(2.25rem, 5vw, 4rem)`)

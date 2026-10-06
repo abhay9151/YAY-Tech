@@ -5,6 +5,8 @@
 @layer base {
   :root {
     color-scheme: light;
+    accent-color: #000000;
+    caret-color: #000000;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -18,23 +20,49 @@
   }
 
   body {
-    @apply bg-paper font-sans text-ink;
+    @apply bg-background font-sans text-foreground;
     overflow-x: clip;
   }
 
   ::selection {
-    @apply bg-lime text-ink;
+    @apply bg-foreground text-inverse-foreground;
   }
 
   :focus-visible {
-    outline: 2px solid #7b52e0;
+    outline: 2px solid #000000;
     outline-offset: 4px;
   }
 
+  [data-theme="dark"] :focus-visible {
+    outline-color: #FFFFFF;
+  }
+
   ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #fafaf8; }
-  ::-webkit-scrollbar-thumb { background: #c9c5cf; border-radius: 99px; }
-  ::-webkit-scrollbar-thumb:hover { background: #7b52e0; }
+  ::-webkit-scrollbar-track { background: #FAFAFA; }
+  ::-webkit-scrollbar-thumb { background: #A3A3A3; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #000000; }
+
+  [data-theme="dark"]:not(#site-menu) {
+    position: relative;
+    isolation: isolate;
+    background-image: radial-gradient(ellipse at 50% 12%, rgba(255, 255, 255, 0.08), transparent 56%);
+  }
+
+  [data-theme="dark"]:not(#site-menu)::after {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch' result='noise'/%3E%3CfeColorMatrix in='noise' type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    content: '';
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  [data-theme="dark"]:not(#site-menu) > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @layer components {
@@ -44,22 +72,27 @@
 
   .section-label::before {
     content: '';
-    @apply h-2 w-2 rounded-full bg-violet;
+    @apply h-2 w-2 rounded-full bg-foreground;
   }
 
   .section-rule {
-    @apply mt-4 h-px w-full bg-ink/15;
+    @apply mt-4 h-px w-full bg-border;
   }
 
   .pill-link {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-ink/20 px-5 py-2.5 text-sm font-medium transition-colors duration-300;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors duration-300;
   }
 }
 
 @layer utilities {
   .text-outline {
-    -webkit-text-stroke: 1px currentColor;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-stroke-color: #000000;
     color: transparent;
+  }
+
+  .dark-glow-card {
+    box-shadow: 0 24px 90px rgba(255, 255, 255, 0.06);
   }
 
   .marquee-track {

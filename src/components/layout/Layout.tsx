@@ -11,7 +11,7 @@ export const Layout: React.FC = () => {
   useSmoothScroll();
 
   return (
-    <div className="flex min-h-screen flex-col bg-paper text-ink">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <PageLoader />
       <Navbar />
       <main id="main-content" className="flex-grow">

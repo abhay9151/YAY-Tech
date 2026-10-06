@@ -38,9 +38,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
       <Container size="wide">
         <SectionHeading
           badge="Services"
-          badgeVariant="accent"
+          badgeVariant="default"
           align="left"
-          title={<>Digital services, delivered <span className="text-violet">on time.</span></>}
+          title={<>Digital services, delivered <span className="text-foreground">on time.</span></>}
           subtitle="Professional engineering, design, and growth solutions delivered by seasoned domain specialists on guaranteed timelines."
         />
 
@@ -55,9 +55,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 onClick={() => {
                   setSelectedCategory(category);
                   setActiveService(null);
+                  setExpandedMobileService(null);
                 }}
                 className={`min-h-[44px] rounded-full border px-4 text-xs font-medium transition-colors sm:text-sm ${
-                  isSelected ? 'border-ink bg-ink text-white' : 'border-ink/15 text-ink/65 hover:border-ink/45 hover:text-ink'
+                  isSelected ? 'border-foreground bg-foreground text-inverse-foreground' : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground'
                 }`}
               >
                 {category}
@@ -66,7 +67,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           })}
         </div>
 
-        <div className="border-t border-ink/20">
+        <div className="border-t border-border">
           <AnimatePresence mode="popLayout">
             {services.map((service, index) => {
               const isExpanded = window.innerWidth < 768
@@ -86,7 +87,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   onPointerLeave={(event) => {
                     if (event.pointerType === 'mouse' && window.innerWidth >= 768) setActiveService(null);
                   }}
-                  className="group border-b border-ink/20 py-5 sm:py-7 lg:py-9"
+                  className="group border-b border-foreground/20 py-5 sm:py-7 lg:py-9"
                 >
                   <div className="grid gap-5 md:grid-cols-[1fr_0.8fr] md:items-center lg:grid-cols-[1.15fr_0.85fr]">
                     <button
@@ -105,13 +106,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                       <span className="font-display text-[clamp(1.7rem,4.7vw,4rem)] font-medium leading-none tracking-[-0.06em]">
                         <span className="underline-draw">{service.title}</span>
                       </span>
-                      <span className="ml-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink/15 text-violet transition-transform group-hover/title:rotate-45 md:hidden">
+                      <span className="ml-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-foreground/15 text-foreground transition-transform group-hover/title:rotate-45 md:hidden">
                         <ArrowUpRight className="h-4 w-4" />
                       </span>
                     </button>
 
                     <div className="grid grid-cols-[minmax(0,0.82fr)_minmax(150px,1fr)] gap-4 md:grid-cols-[minmax(0,0.8fr)_minmax(150px,1fr)]">
-                      <div className="relative hidden min-h-28 overflow-hidden rounded-2xl bg-violet/10 md:block lg:min-h-36">
+                      <div className="relative hidden min-h-28 overflow-hidden rounded-2xl bg-foreground/10 md:block lg:min-h-36">
                         <motion.img
                           src={service.image}
                           alt=""
@@ -122,22 +123,22 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                           transition={{ duration: 0.45 }}
                           className={`absolute inset-0 h-full w-full rounded-2xl object-cover transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0'}`}
                         />
-                        <span className="absolute bottom-2 left-2 rounded-full bg-white/90 px-3 py-1 text-[10px] font-medium text-ink">
+                        <span className="absolute bottom-2 left-2 rounded-full bg-surface/90 px-3 py-1 text-[10px] font-medium text-foreground">
                           {service.category}
                         </span>
                       </div>
                       <div className="min-w-0">
-                        <ul className="grid min-w-0 grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-3 gap-y-2 text-xs leading-snug text-ink/65 sm:text-sm">
+                        <ul className="grid min-w-0 grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-3 gap-y-2 text-xs leading-snug text-foreground/65 sm:text-sm">
                           {service.features.slice(0, 4).map((feature) => (
                             <li key={feature} className="flex min-w-0 items-start gap-1.5">
-                              <Check aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-violet" />
+                              <Check aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-foreground" />
                               <span className="min-w-0 break-words">{feature}</span>
                             </li>
                           ))}
                         </ul>
-                        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-muted sm:text-xs">
+                        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-muted-foreground sm:text-xs">
                           <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{service.deliveryTime}</span>
-                          <span className="inline-flex items-center gap-1"><Star className="h-3 w-3 fill-violet text-violet" />{service.rating} ({service.reviewsCount})</span>
+                          <span className="inline-flex items-center gap-1"><Star className="h-3 w-3 fill-foreground text-foreground" />{service.rating} ({service.reviewsCount})</span>
                           <span>{service.price}</span>
                         </div>
                       </div>
@@ -154,16 +155,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                       >
                         <div className="pt-4">
                           <img src={service.image} alt={`${service.title} service preview`} loading="lazy" className="mb-4 h-48 w-full rounded-2xl object-cover" />
-                          <p className="text-sm leading-relaxed text-muted">{service.description}</p>
+                          <p className="text-sm leading-relaxed text-muted-foreground">{service.description}</p>
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  <p className="mt-3 hidden max-w-2xl text-sm leading-relaxed text-muted md:block">{service.description}</p>
+                  <p className="mt-3 hidden max-w-2xl text-sm leading-relaxed text-muted-foreground md:block">{service.description}</p>
                   <button
                     type="button"
                     onClick={() => goToContact(service.title)}
-                    className="mt-3 inline-flex min-h-11 items-center gap-2 text-xs font-semibold uppercase tracking-[0.13em] text-violet hover:text-violet-dark"
+                    className="mt-3 inline-flex min-h-11 items-center gap-2 text-xs font-semibold uppercase tracking-[0.13em] text-foreground underline-offset-4 hover:underline"
                   >
                     Discuss this service <ArrowUpRight className="h-4 w-4" />
                   </button>

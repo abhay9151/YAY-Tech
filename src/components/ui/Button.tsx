@@ -30,7 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+    'inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
 
   const sizeStyles = {
     sm: 'text-xs px-4 py-2 min-h-[44px] gap-1.5',
@@ -40,15 +40,15 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-ink text-white hover:bg-violet hover:shadow-violet active:bg-violet-dark font-semibold',
+      'bg-foreground text-inverse-foreground hover:bg-inverse-foreground hover:text-inverse-background active:bg-inverse-foreground font-semibold',
     secondary:
-      'bg-violet text-white hover:bg-violet-dark hover:shadow-violet font-semibold',
+      'bg-foreground text-inverse-foreground hover:bg-inverse-foreground hover:text-inverse-background font-semibold',
     outline:
-      'border border-ink/25 text-ink hover:bg-ink hover:text-white hover:border-ink transition-colors',
+      'border border-foreground/25 text-foreground hover:bg-foreground hover:text-inverse-foreground hover:border-foreground transition-colors',
     ghost:
-      'text-ink/70 hover:text-ink hover:bg-ink/5 active:bg-ink/10',
+      'text-foreground/70 hover:text-foreground hover:bg-gray-100 active:bg-gray-200',
     glow:
-      'bg-lime text-ink hover:bg-mint font-semibold',
+      'bg-inverse-foreground text-inverse-background hover:bg-inverse-background hover:text-inverse-foreground font-semibold',
   };
 
   const content = (

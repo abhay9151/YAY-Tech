@@ -22,7 +22,7 @@
 
 ## Styling and dependencies
 
-- Tailwind tokens currently implement a pale neutral/indigo light theme; global styles and page copy still contain legacy dark-theme assumptions.
+- The original Tailwind theme used light tinted surfaces plus multiple accent hues; see `COLOR_AUDIT.md` for the monochrome conversion.
 - Space Grotesk and Instrument Sans load from Google Fonts in `index.html`.
 - Framer Motion, Lenis, and Lucide React are already dependencies. GSAP and ScrollTrigger are not installed.
 - Vite serves on port 3000; `npm run build` runs TypeScript and the production bundle.

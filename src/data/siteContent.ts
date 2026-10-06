@@ -29,7 +29,6 @@ export interface WhyChooseUsPillar {
   id: string;
   title: string;
   description: string;
-  color: string;
   metricLabel: string;
   metricValue: string;
   actionText: string;
@@ -233,7 +232,6 @@ export const siteContent = {
       id: "delivery",
       title: "Guaranteed On-Time Delivery",
       description: "We understand that time is money. Every project is delivered precisely when promised with our industry-leading on-time completion rate.",
-      color: "blue",
       metricLabel: "Success Rate",
       metricValue: "99.5%",
       actionText: "View case studies",
@@ -247,7 +245,6 @@ export const siteContent = {
       id: "team",
       title: "World-Class Expert Team",
       description: "Our handpicked team of senior developers, architects, and product managers brings 10+ years of battle-tested engineering experience.",
-      color: "green",
       metricLabel: "Team Experience",
       metricValue: "10+ Years",
       actionText: "Meet our experts",
@@ -261,7 +258,6 @@ export const siteContent = {
       id: "quality",
       title: "Enterprise-Grade Quality",
       description: "Our rigorous quality assurance process includes comprehensive automated testing protocols, rigorous code reviews, and security audits.",
-      color: "purple",
       metricLabel: "Quality Score",
       metricValue: "98.7%",
       actionText: "View quality process",

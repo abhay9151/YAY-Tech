@@ -56,20 +56,20 @@ export const ProcessSection: React.FC = () => {
   const endDrag = () => { dragState.current.active = false; };
 
   return (
-    <section id="process" data-nav-section className="overflow-hidden border-t border-line py-20 sm:py-28 lg:py-36">
+    <section id="process" data-nav-section className="overflow-hidden border-t border-border py-20 sm:py-28 lg:py-36">
       <Container size="wide">
-        <div className="grid gap-8 border-b border-ink/15 pb-10 md:grid-cols-12 md:items-end md:pb-14">
+        <div className="grid gap-8 border-b border-foreground/15 pb-10 md:grid-cols-12 md:items-end md:pb-14">
           <div className="md:col-span-7">
             <p className="section-label mb-5">Our process</p>
             <h2 className="font-display text-display-lg font-medium leading-[0.98] tracking-[-0.06em]">
-              A clear path from <span className="text-violet">first brief</span> to final delivery.
+              A clear path from <span className="text-foreground">first brief</span> to final delivery.
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9">
-            <p className="mb-6 text-sm leading-relaxed text-muted sm:text-base">
+            <p className="mb-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
               Our systematic four-phase engineering framework guarantees transparent communication, zero scope creeps, and punctual deployment.
             </p>
-            <a href="#process-gallery" className="pill-link group hover:border-violet hover:text-violet">
+            <a href="#process-gallery" className="pill-link group hover:border-foreground hover:text-foreground">
               See process <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </div>
@@ -88,7 +88,7 @@ export const ProcessSection: React.FC = () => {
       >
         {siteContent.process.map((step, index) => (
           <article key={step.step} className={`w-[78vw] max-w-[470px] shrink-0 ${index % 2 ? 'mt-12 sm:mt-20' : ''}`}>
-            <div className={`relative overflow-hidden rounded-[1.75rem] bg-violet/10 ${index % 2 ? 'h-52 sm:h-72' : 'h-64 sm:h-96'}`} data-process-image>
+            <div className={`relative overflow-hidden rounded-[1.75rem] bg-foreground/10 ${index % 2 ? 'h-52 sm:h-72' : 'h-64 sm:h-96'}`} data-process-image>
               <img
                 src={processImages[index]}
                 alt={`Visual for process phase: ${step.title}`}
@@ -98,16 +98,16 @@ export const ProcessSection: React.FC = () => {
                 draggable="false"
                 className="h-full w-full object-cover"
               />
-              <span className="absolute left-4 top-4 rounded-full bg-lime px-4 py-2 text-xs font-semibold uppercase tracking-wider text-ink">
+              <span className="absolute left-4 top-4 rounded-full bg-foreground px-4 py-2 text-xs font-semibold uppercase tracking-wider text-inverse-foreground">
                 Phase 0{step.step}
               </span>
             </div>
-            <div className="flex items-start justify-between gap-4 border-b border-ink/15 py-5">
+            <div className="flex items-start justify-between gap-4 border-b border-foreground/15 py-5">
               <div>
                 <h3 className="font-display text-xl font-medium tracking-tight sm:text-2xl">{step.title}</h3>
-                <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">{step.description}</p>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">{step.description}</p>
               </div>
-              <span className="font-display text-3xl font-medium text-violet">0{step.step}</span>
+              <span className="font-display text-3xl font-medium text-foreground">0{step.step}</span>
             </div>
           </article>
         ))}

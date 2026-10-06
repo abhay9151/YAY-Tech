@@ -7,13 +7,13 @@ export const NotFoundPage: React.FC = () => {
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-20">
       <Container size="narrow" className="text-center space-y-6">
-        <div className="font-display text-8xl sm:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent via-indigo-300 to-emerald-400">
+        <div className="font-display text-8xl sm:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600">
           404
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink">
+        <h1 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-foreground">
           Page Not Found
         </h1>
-        <p className="text-base text-gray-400 max-w-md mx-auto leading-relaxed">
+        <p className="text-base text-gray-600 max-w-md mx-auto leading-relaxed">
           The page you are looking for doesn't exist, has been moved, or is temporarily unavailable.
         </p>
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
