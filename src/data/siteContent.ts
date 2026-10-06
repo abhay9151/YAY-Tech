@@ -157,7 +157,7 @@ export const siteContent = {
       rating: 4.92,
       reviewsCount: 88,
       features: ["Payment Gateway Integration", "Inventory Management", "Order Tracking", "Admin Dashboard", "Conversion Optimization", "Cart Recovery"],
-      image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "graphic-design",

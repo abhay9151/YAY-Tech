@@ -15,3 +15,7 @@
 - Added outlined headline emphasis and a slightly stronger image hover zoom without changing text or layout.
 
 The monochrome favicon remains a black-and-white wordmark. Existing routes, copy, form behavior, and animation logic are unchanged.
+
+## Broken service image
+
+- Replaced the E-commerce Solutions card's Unsplash image URL after confirming the old asset responds with HTTP 404. The replacement storefront image responds successfully and remains full color.
